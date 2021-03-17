@@ -273,7 +273,7 @@ void Objects::calcPosition(mat4 model, int value)
                     tmpLocs[q * QUANTITY + y].velocity = tmpLocs[x].velocity;
                     tmpLocs[x].velocity = tmpvec;
                     tmpLocs[q * QUANTITY + y].rotVel *= -1.0f;
-                    tmpLocs[x].rotation *= -1.0f;
+                    tmpLocs[x].rotVel *= -1.0f;
                 }
             }
             tmpLocs[q * QUANTITY + y].rotation += tmpLocs[q * QUANTITY + y].rotVel;
