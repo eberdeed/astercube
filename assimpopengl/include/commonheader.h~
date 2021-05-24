@@ -1,0 +1,136 @@
+/*********************************************************************
+ * *******************************************************************
+ * commonheader:  A file to provide common includes.
+ * Created by:  Edward Charles Eberle <eberdeed@eberdeed.net>
+ * April 2020 San Diego, California United States of America
+ * *******************************************************************
+ * ******************************************************************/
+/**  \class commonheader.h: A common header file for the AssimpOpenGL library.
+ *  Created by Edward C. Eberle <eberdeed@eberdeed.net>
+ *  December 17, 2016, San Diego California USA
+ *  Reworked for OpenGL April 11, 2020
+ */
+
+/** \brief These are some files that we need to include to use OpenGL. 
+ * Also included are GLEW, GLU, pthread, the OpenGL Math Library (GLM), the Boost 
+ * library, the Assimp library, c++ system files, Free Image Plus.
+ */
+#ifndef COMMONHEADER_H
+#define COMMONHEADER_H
+// GLEW The OpenGL library manager
+#define GLEW_STATIC
+#include <glew.h>
+// GLM The OpenGL Math Library
+#define GLM_FORCE_RADIANS
+#include <glm.hpp>
+#include <gtc/matrix_transform.hpp>
+#include <gtx/quaternion.hpp>
+#include <gtc/quaternion.hpp>
+#include <gtc/type_ptr.hpp>
+#include <gtx/matrix_interpolation.hpp>
+#include <gtc/matrix_access.hpp> 
+#include <gtx/euler_angles.hpp>
+// Assimp the Asset Importation Library
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+// Free Image Plus
+#include <FreeImagePlus.h>
+// C++ includes
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <exception>
+#include <vector>
+#include <cstdlib>
+#include <cstring>
+#include <cstdio>
+#include <cstdint>
+// Boost The standard template library clone++.
+#include <boost/chrono/include.hpp>
+#include <filesystem.hpp>
+#include <boost/filesystem/fstream.hpp>
+// X11
+#include <X11/Xlib.h>
+
+// The namespaces used.
+using namespace std;
+using namespace glm;
+using namespace boost::filesystem;
+
+/** \brief A structre to contain a vertex
+ * for a textured mesh.
+ */
+struct Vertex {
+    //! Vertex Postion cooridinates.
+    float Position[3];
+    //! Normal to the surface at the vertex point.
+    float Normal[3];
+    //! Texture coordinates.
+    float TexCoords[2];
+};
+/** \brief A structure to contain a vertex 
+ * for untextured meshes.
+ */
+struct Vertex1 {
+    //! Vertex Postion cooridinates.
+    float Position[3];
+    //! Normal to the surface at the vertex point.
+    float Normal[3];
+};
+/** \brief A structure to contain a texture 
+ * for display on the surface of a mesh.
+ */
+struct Texture {
+    //! The handle to the OpenGL texture buffer.
+    GLuint id;
+    //! The type of the texture, for example "diffuse."
+    string type;
+    //! The file location of the image file defining the texture.
+    string path;
+};
+/** \brief A structure to define a point light.
+ */
+struct PointLight {    
+    //! The position of the light.
+    vec3 position;
+    //! The constant value of the light.
+    float constant;
+    //! The linear degredation value of the light.
+    float linear;
+    //! The quadratic degredation value of the light/
+    float quadratic;  
+    //! The ambient color value.
+    vec3 ambient;
+    //! The diffuse color value.
+    vec3 diffuse;
+    //! The specular color value.
+    vec3 specular;
+};
+
+/** \brief A structure to define a spotlight.
+ */
+struct SpotLight {
+    //! The  position of the light.
+    vec3 position;
+    //! The direction the spotlight points in.
+    vec3 direction;
+    //! The cut off angle in degrees.
+    float cutOff;
+    //! The outer cut off angle in degrees.
+    float outerCutOff;
+    //! The constant value of the light.
+    float constant;
+    //! The linear degredation value of the light.
+    float linear;
+    //! The quadratic degredation value of the light/
+    float quadratic;  
+    //! The ambient color value.
+    vec3 ambient;
+    //! The diffuse color value.
+    vec3 diffuse;
+    //! The specular color value.
+    vec3 specular;
+};
+
+#endif // COMMONHEADER_H

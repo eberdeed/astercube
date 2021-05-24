@@ -1,0 +1,14 @@
+
+    libassimpopengl created and debugged.
+    ECE 03/30/20
+    
+    libassimpopengl included in this program and others
+    and redocumented with minor code changes.
+    ECE 04/17/20
+    
+    libassimpopengl added instancing capability.
+    ECE 03/04/21
+    
+    libassimpopengl added explosion capability.
+    ECE 03/25/21
+    

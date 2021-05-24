@@ -1,0 +1,12 @@
+
+    Change Log for astercube:
+
+    Created and documented program.
+    ECE 03/04/21
+
+    Cleaned up the meshes so they calculated the shaders and
+    variables at data initialization.
+    ECE 03/17/21
+    
+    libassimpopengl.so.1.0 made uniform across progams.
+    ECE 05/24/21
