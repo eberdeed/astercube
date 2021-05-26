@@ -12,3 +12,5 @@
     libassimpopengl added explosion capability.
     ECE 03/25/21
     
+    libassimpopengl.so.1.0 made uniform across progams.
+    ECE 05/24/21

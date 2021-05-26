@@ -655,7 +655,7 @@ float Model::DrawExplosion(int index, mat4 view, mat4 projection, vector<ModelIn
         }
         meshItem.mesh->explosion(modelobj[index].model, view, projection, timeVal);
     }
-    timeVal += 0.1f;
+    timeVal += 1.0f;
     return timeVal;
 }
 void Model::sndMaker()
@@ -699,7 +699,6 @@ void Model::sndMaker()
             if (result != 0)
             {
                 cout <<  "\n\n\tUnable to queue audio data.\n\n";
-                exit(-1);
             }
             else
             {
@@ -723,7 +722,6 @@ void Model::sndMaker()
     catch (exception exc)
     {
         cout << "\n\n\tError opening SDL2 audio device:  " << exc.what() << ".\n\n";
-        exit(-1);
     }
     SDL_ClearQueuedAudio(dev);
     SDL_CloseAudioDevice(dev);

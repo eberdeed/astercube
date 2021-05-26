@@ -487,7 +487,7 @@ void Mesh::explosion(mat4 model, mat4 view, mat4 projection, float timeVal)
         chunkLoc = mat4(1.0f);
         for (int y = 0; y < 3; y++)
         {
-            vert[y] = -verticesIndexed[currVal].Normal[y] * timeVal * 0.1f;
+            vert[y] = verticesIndexed[currVal].Normal[y] * timeVal * 0.1f;
         }
         chunkLoc = translate(model, vert);
         chunkArray[x] = chunkLoc;
